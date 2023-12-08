@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-New Pet
+Edit Pet
 {% endblock %}
 
 
 {% block content %}
-<h1>New Pet</h1>
+<h1>Edit {{ pet.name }}</h1>
 <form id="pet-add-form" method="POST">
     {{ form.hidden_tag() }}
     {% for field in form if field.widget.input_type != 'hidden' %}
@@ -18,7 +18,7 @@ New Pet
         {% endfor %}
     </p>
     {% endfor %}
-    <button type="submit">Add</button>
+    <button type="submit">Update</button>
 </form>
 <a href="/"><button>Cancel</button></a>
 
